@@ -1,0 +1,23 @@
+{
+  "name": "jquery-event-infinite-scroll",
+  "description": "Event-driven infinite scroll plugin for jQuery.",
+  "main": "src/jquery.eventInfiniteScroll.js",
+  "authors": [
+    "Temoto-kun <kiiroifuriku@hotmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "jQuery",
+    "event",
+    "infinite-scroll",
+    "UI"
+  ],
+  "homepage": "https://github.com/Temoto-kun/jquery-eventinfinitescroll",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
