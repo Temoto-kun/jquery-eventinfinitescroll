@@ -4,29 +4,38 @@
  */
 
 (function () {
-    if (!jQuery){
+    if (!jQuery) {
         throw new Error('jquery.eventInfiniteScroll requires jQuery');
     }
 
-    function InfiniteScroll(options){
-        var $el, $boundary, newState, oldState, xhr;
-
-        newState = false;
+    function InfiniteScroll(options) {
+        var $el,
+            $boundary,
+            newState = false,
+            oldState,
+            xhr;
 
         $el = jQuery(options.element);
         $boundary = $el.find(options.boundarySelector);
 
         $el
-            .on('scroll', function (){
+            .on('scroll', function () {
                 newState = $el.scrollTop() + $el.innerHeight() > $el.prop('scrollHeight') - $boundary.innerHeight();
-                if (oldState !== newState && newState){
+
+                // we need to check the state so that it doesn't repeat the XHR request when we scroll just
+                // a wee bit and the boundary is still visible.
+
+                if (oldState !== newState && newState) {
+
                     if (!!xhr){
+                        // avoid duplication of XHR requests
                         xhr.abort();
                     }
 
                     xhr = options.request();
                     $el.trigger('infinitescroll', xhr);
                 }
+
                 oldState = newState;
             });
     }
