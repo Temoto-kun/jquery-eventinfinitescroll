@@ -1,5 +1,5 @@
 {
-  "name": "jquery-event-infinite-scroll",
+  "name": "@theoryofnekomata/jquery-event-infinite-scroll",
   "version": "0.1.0",
   "description": "Event-driven infinite scroll plugin for jQuery.",
   "main": "src/jquery.eventInfiniteScroll.js",

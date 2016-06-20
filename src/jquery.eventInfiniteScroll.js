@@ -41,7 +41,7 @@
     }
 
     jQuery.fn.infiniteScroll = function infiniteScroll(options){
-        this.each(function (i, el){
+        return this.each(function (i, el){
             options.element = el;
             new InfiniteScroll(options);
         });
